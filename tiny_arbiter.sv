@@ -49,7 +49,7 @@ assign m1_data = m1_data_r;
 assign m1_addr = m1_addr_r;
 
 assign s_ready = (dec_m1 == 1'h1 && (m1_st == IDLE || m1_ready == 1'h1)) ||
-				 (dec_m2 == 1'h1 && (m2_st == IDLE || m2_ready == 1'h1)) ? 1'h1 : 1'h0;
+		 (dec_m2 == 1'h1 && (m2_st == IDLE || m2_ready == 1'h1));
 
 always_comb begin
 	dec_m1 = s_valid & (s_addr[31:28] == BASE_M1[31:28]);
